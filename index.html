@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pazarkoski.</title>
+  <meta name="keywords" content="Daniel Pazarkoski, Portfolio,">
+  <link rel="icon" type="image/png" href="photos/dp_logo.png">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #014f68;
+      --fg: #ffffff;
+      --muted: #9ca3af;
+      --grid: rgba(255,255,255,0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--fg);
+      line-height: 1.4;
+      background-image:
+              linear-gradient(to right, var(--grid) 2px, transparent 1px),
+              linear-gradient(to bottom, var(--grid) 2px, transparent 1px);
+      background-size: 128px 128px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 24px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    nav{
+      margin-left: 5px;
+
+    }
+
+    nav a {
+      margin-right: 40px;
+      font-size: 14px;
+      color: var(--muted);
+      gap: 16px;
+    }
+    nav a:hover {
+      opacity: 0.6;
+      border-bottom: 2px solid var(--muted);
+
+    }
+
+    nav a:last-child {
+      margin-right: 0;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 160px 40px 80px;
+    }
+
+    .hero h1 {
+      font-size: clamp(64px, 12vw, 160px);
+      font-weight: 900;
+      line-height: 0.95;
+    }
+
+    .hero p {
+      margin-top: 40px;
+      max-width: 900px;
+      font-size: 32px;
+      color: var(--muted);
+      border-left: 2px solid var(--fg);
+      padding-left: 24px;
+    }
+    .title-label{
+      font-size: 40px;
+      letter-spacing: 4px;
+      color: var(--fg);
+      margin-bottom: 54px;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 4px;
+      color: var(--fg);
+      margin-bottom: 24px;
+    }
+
+    /* GRID SECTIONS */
+    section {
+      padding: 120px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .card p {
+      color: var(--muted);
+      max-width: 500px;
+    }
+
+    .meta {
+      margin-top: 12px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 80px 40px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .parag{
+      margin-left: 50px;
+      padding-left: 50px;
+      max-width: 950px;
+      font-size: 20px;
+      color: var(--muted);
+      border-left: 5px solid var(--fg);
+    }
+
+    @media (max-width: 900px) {
+      section {
+        grid-template-columns: 1fr;
+      }
+
+      .hero p {
+        font-size: 20px;
+      }
+    }
+    /* TECHNICAL EXPERTISE */
+    .tech {
+      padding: 120px 40px;
+    }
+
+    .tech .section-label {
+      margin-bottom: 80px;
+      color: var(--muted);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 80px;
+    }
+
+    .tech h4 {
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .tech p {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    /* FINAL CTA */
+    .cta {
+      padding: 160px 40px 120px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+    }
+
+    .cta h2 {
+      font-size: clamp(56px, 10vw, 120px);
+      font-weight: 900;
+      line-height: 0.95;
+    }
+
+    .cta-links {
+      margin-top: 40px;
+      display: flex;
+      gap: 40px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .cta-links a {
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--fg);
+    }
+
+    /* TIME / LOCATION */
+    .meta-right {
+      text-align: right;
+    }
+
+    .meta-right .label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .meta-right .value {
+      font-size: 32px;
+      font-weight: 800;
+    }
+
+    /* BOTTOM FOOTER */
+    .footer-bottom {
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta {
+        grid-template-columns: 1fr;
+        gap: 80px;
+      }
+
+      .meta-right {
+        text-align: left;
+      }
+    }
+
+    /* PROJECTS */
+    .projects {
+      max-width: 1100px;
+      padding: 120px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 80px;
+      padding: 24px 28px;
+      border-radius: 15px;
+      border: 1px solid #ffffff;
+      background: rgba(0, 0, 0, 0.37);
+      backdrop-filter: blur(2px);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .project:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 0 3px #22d3ee33;
+    }
+
+    .project h3 {
+      font-size: 32px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .project p {
+      max-width: 720px;
+      font-size: 18px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* TAGS */
+    .project-tags {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .project-tags span {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--fg);
+      opacity: 0.85;
+      border-radius: 999px;
+      border: 1px solid #ffffff;
+      padding: 6px 12px;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+    }
+
+    /* LINKS */
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      align-items: flex-end;
+    }
+
+    .project-links a {
+      font-size: 12px;
+      letter-spacing: 3px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--fg);
+      transition: opacity .2s ease;
+    }
+
+    .project-links a:hover {
+      opacity: 0.6;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .project {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .project-links {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+
+    <div class="logo">PAZARKOSKI.</div>
+  </a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <div class="hero" STYLE="margin-top: 180px">
+    <h1>DANIEL<br>PAZARKOSKI</h1>
+    <nav >
+      <a href="assets/Daniel_pazarkoski_CV.pdf" download="Daniel-Pazarkoski-CV.pdf">
+        CV
+      </a>
+      <a href="https://github.com/Pazarkoskid">GITHUB</a>
+      <a href="https://www.linkedin.com/in/daniel-pazarkoski-37912b2bb/">LINKEDIN</a>
+      <a href="mailto:pazarkoskidaniel123@gmail.com">E-MAIL</a>
+    </nav>
+  </div>
+  <div class="parag">
+    <p>
+      I’m a motivated full-stack developer with a strong passion for building clean, functional, and user-focused web applications. I’m currently in my final year of college, expected to graduate in one year, and actively preparing to transition into a professional development role.
+    </p><br>
+    <p>
+      Although I don’t yet have formal work experience, I’ve spent several years developing real-world projects, exploring modern web technologies, and continuously improving my skills through hands-on practice. I enjoy turning ideas into working solutions, writing maintainable code, and learning best practices used in real production environments.
+    </p><br>
+    <p>
+      I’m actively seeking an internship or junior developer position where I can contribute, learn from experienced engineers, and grow as part of a collaborative team. Outside of coding, I enjoy experimenting with new technologies, improving existing projects, and staying engaged with the developer community.
+    </p>
+  </div>
+
+
+
+
+  <section class="projects">
+    <div class="title-label">PROJECTS</div>
+
+    <div class="project">
+      <div class="project-main">
+        <h3>Labino Boats Website</h3>
+
+        <p>
+          A responsive business website for Labino Boats, built using Bootstrap, HTML, and CSS. Focused on showcasing products and services with clean, mobile-friendly layouts.
+        </p>
+
+        <div class="project-tags">
+          <span>Bootstrap</span>
+          <span>Html</span>
+          <span>CSS</span>
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://github.com/Pazarkoskid/labino-boats">GITHUB</a>
+        <a href="https://labinoboats.com/">VIEW</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-main">
+        <h3>Quick Quiz Web App</h3>
+
+        <p>
+          A quick and intuitive quiz app developed in FlutterFlow. Great example of no-code/low-code platforms enabling fast MVP development with great UI.
+        </p>
+
+        <div class="project-tags">
+          <span>FlutterFlow</span>
+          <span>Dart</span>
+          <span>UI</span>
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://quickquiz.flutterflow.app/start">VIEW</a>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-main">
+        <h3>nuCrepes Pancake App Prototype</h3>
+
+        <p>
+          An interactive UI prototype designed in Figma. Focuses on user-friendly navigation and clean aesthetics.
+        </p>
+
+        <div class="project-tags">
+          <span>UI/UX Design</span>
+        </div>
+      </div>
+
+      <div class="project-links">
+        <a href="https://www.figma.com/proto/WMvBM0ABOEIiqgV0KSNAim/lab3_213071?node-id=0-1&t=mge048lm3NE73P64-1">VIEW</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS & PUBLICATIONS -->
+
+  <!-- TECHNICAL EXPERTISE -->
+  <section class="tech">
+    <div class="section-label">TECHNICAL EXPERTISE</div>
+
+    <div class="tech-grid">
+      <div>
+        <h4>LANGUAGES</h4>
+        <p>C#, KOTLIN, TYPESCRIPT,<br>JAVASCRIPT, DART</p>
+      </div>
+
+      <div>
+        <h4>FRAMEWORKS</h4>
+        <p>.NET, SPRING BOOT, ANGULAR,<br>FLUTTER, TAURI</p>
+      </div>
+
+      <div>
+        <h4>TOOLS</h4>
+        <p>GIT, DOCKER, AZURE,<br>KUBERNETES, AWS, LINUX</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CALL TO ACTION -->
+  <section class="cta">
+    <div>
+      <h2>LET'S BUILD<br>SOMETHING.</h2>
+
+      <div class="cta-links">
+        <a href="#">EMAIL</a>
+        <a href="#">GITHUB</a>
+        <a href="#">LINKEDIN</a>
+      </div>
+    </div>
+
+    <div class="meta-right">
+      <div style="margin-bottom:48px">
+        <div class="label">LOCAL TIME</div>
+        <div class="value" id="clock">00:00:00</div>
+      </div>
+
+      <div>
+        <div class="label">LOCATION</div>
+        <div class="value">MK</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Pazarkoski.
+</footer>
+<script>
+  function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").textContent =
+            now.toLocaleTimeString("en-GB");
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+</body>
+</html>
