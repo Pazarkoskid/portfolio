@@ -28,10 +28,24 @@
       background-color: var(--bg);
       color: var(--fg);
       line-height: 1.4;
+      /*background-image:*/
+      /*        linear-gradient(to right, var(--grid) 2px, transparent 1px),*/
+      /*        linear-gradient(to bottom, var(--grid) 2px, transparent 1px);*/
+      --grid-thin: rgba(255,255,255,0.06);
+      --grid-thick: rgba(255,255,255,0.12);
+      --diag: rgba(255,255,255,0.04);
+
       background-image:
-              linear-gradient(to right, var(--grid) 2px, transparent 1px),
-              linear-gradient(to bottom, var(--grid) 2px, transparent 1px);
-      background-size: 128px 128px;
+              linear-gradient(to right, var(--grid-thin) 1px, transparent 1px),
+              linear-gradient(to bottom, var(--grid-thin) 1px, transparent 1px),
+              linear-gradient(to right, var(--grid-thick) 2px, transparent 2px),
+              linear-gradient(to bottom, var(--grid-thick) 2px, transparent 2px);
+
+      background-size:
+              80px 80px,
+              80px 80px,
+              400px 400px,
+              400px 400px;
     }
 
     a {
@@ -97,7 +111,7 @@
       font-size: 32px;
       color: var(--muted);
       border-left: 2px solid var(--fg);
-      padding-left: 24px;
+      padding-left: 20px;
     }
     .title-label{
       font-size: 40px;
@@ -133,24 +147,12 @@
       max-width: 500px;
     }
 
-    .meta {
-      margin-top: 12px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 80px 40px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
     .parag{
-      margin-left: 50px;
-      padding-left: 50px;
+      margin-left: 40px;
+      padding-right: 15px;
+      padding-left: 20px;
       max-width: 950px;
-      font-size: 20px;
+      font-size: 15px;
       color: var(--muted);
       border-left: 5px solid var(--fg);
     }
@@ -165,10 +167,10 @@
         line-height: 0.95;
       }
       .hero{
-        margin-top: 100%;
+        margin-top: 85%;
       }
       nav a {
-        margin-right: 30px;
+        margin-right: 20px;
         font-size: 14px;
         color: var(--muted);
         gap: 16px;
@@ -179,103 +181,7 @@
         padding-left: 500px;
       }
     }
-    /* TECHNICAL EXPERTISE */
-    .tech {
-      padding: 120px 40px;
-    }
 
-    .tech .section-label {
-      margin-bottom: 80px;
-      color: var(--muted);
-    }
-
-    .tech-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 80px;
-    }
-
-    .tech h4 {
-      font-size: 14px;
-      letter-spacing: 3px;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    .tech p {
-      font-size: 28px;
-      font-weight: 800;
-      line-height: 1.3;
-    }
-
-    /* FINAL CTA */
-    .cta {
-      padding: 160px 40px 120px;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-    }
-
-    .cta h2 {
-      font-size: clamp(56px, 10vw, 120px);
-      font-weight: 900;
-      line-height: 0.95;
-    }
-
-    .cta-links {
-      margin-top: 40px;
-      display: flex;
-      gap: 40px;
-      font-size: 14px;
-      letter-spacing: 2px;
-    }
-
-    .cta-links a {
-      padding-bottom: 4px;
-      border-bottom: 2px solid var(--fg);
-    }
-
-    /* TIME / LOCATION */
-    .meta-right {
-      text-align: right;
-    }
-
-    .meta-right .label {
-      font-size: 12px;
-      letter-spacing: 3px;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .meta-right .value {
-      font-size: 32px;
-      font-weight: 800;
-    }
-
-    /* BOTTOM FOOTER */
-    .footer-bottom {
-      padding: 40px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .tech-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .cta {
-        grid-template-columns: 1fr;
-        gap: 80px;
-      }
-
-      .meta-right {
-        text-align: left;
-      }
-    }
 
     /* PROJECTS */
     .projects {
@@ -283,7 +189,7 @@
       padding: 120px 40px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 25px;
     }
 
     .project {
@@ -361,7 +267,7 @@
     @media (max-width: 900px) {
       .project {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
       }
 
       .project-links {
@@ -371,6 +277,117 @@
       }
     }
 
+
+    /* TECHNICAL EXPERTISE */
+    .tech {
+      padding: 120px 40px;
+    }
+
+    .tech .section-label {
+      margin-bottom: 80px;
+      color: var(--muted);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 80px;
+    }
+
+    .tech h4 {
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .tech p {
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.3;
+    }
+
+    /* FINAL CTA */
+    .cta {
+      padding: 160px 40px 120px;
+      align-items: end;
+    }
+
+    .cta h2 {
+      font-size: clamp(56px, 10vw, 120px);
+      font-weight: 900;
+      line-height: 0.95;
+    }
+
+    .cta-links {
+      margin-top: 40px;
+      display: flex;
+      gap: 40px;
+      font-size: 14px;
+      letter-spacing: 2px;
+      color: var(--muted);
+    }
+
+    .cta-links a {
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--muted);
+    }
+
+    /* TIME / LOCATION */
+    .meta-right {
+      margin-top: 65px;
+    }
+
+    .meta-right .label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--muted);
+    }
+
+    .meta-right .value {
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    /* BOTTOM FOOTER */
+
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .tech-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta {
+        grid-template-columns: 1fr;
+        gap: 80px;
+      }
+      .cta h2 {
+        font-size: clamp(46px, 10vw, 120px);
+        font-weight: 900;
+        line-height: 0.95;
+      }
+      .cta-links {
+        margin-top: 15px;
+        display: flex;
+        gap: 30px;
+        font-size: 10px;
+        letter-spacing: 2px;
+      }
+      .meta-right {
+        text-align: left;
+        margin-bottom: -50px;
+      }
+    }
+
+
+    /* FOOTER */
+    footer {
+      padding-left: 40px;
+      padding-bottom: 5px;
+      font-size: 14px;
+      color: var(--muted);
+    }
 
   </style>
 </head>
@@ -475,7 +492,6 @@
   </section>
 
 
-  <!-- PROJECTS & PUBLICATIONS -->
 
   <!-- TECHNICAL EXPERTISE -->
   <section class="tech">
@@ -500,7 +516,7 @@
   </section>
 
   <!-- FINAL CALL TO ACTION -->
-  <section class="cta">
+  <div class="cta">
     <div>
       <h2>LET'S BUILD<br>SOMETHING.</h2>
 
@@ -522,13 +538,13 @@
         <div class="value">MK</div>
       </div>
     </div>
-  </section>
+  </div>
 
+  <footer>
+    © 2026 Pazarkoski.
+  </footer>
 </main>
 
-<footer>
-  © 2026 Pazarkoski.
-</footer>
 <script>
   function updateClock() {
     const now = new Date();
