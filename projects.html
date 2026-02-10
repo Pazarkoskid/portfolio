@@ -1,10 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <title>Pazarkoski.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="Daniel Pazarkoski, Portfolio,">
+    <link rel="icon" type="image/png" href="photos/dp_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #014f68;
+            --fg: #ffffff;
+            --muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--fg);
+            line-height: 1.4;
+
+            --grid-thin: rgba(255,255,255,0.06);
+            --grid-thick: rgba(255,255,255,0.12);
+
+            background-image:
+                    linear-gradient(to right, var(--grid-thin) 1px, transparent 1px),
+                    linear-gradient(to bottom, var(--grid-thin) 1px, transparent 1px),
+                    linear-gradient(to right, var(--grid-thick) 2px, transparent 2px),
+                    linear-gradient(to bottom, var(--grid-thick) 2px, transparent 2px);
+
+            background-size:
+                    80px 80px,
+                    80px 80px,
+                    400px 400px,
+                    400px 400px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 24px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        .logo {
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            margin-left: 40px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        nav a:hover {
+            opacity: 0.6;
+            border-bottom: 2px solid var(--muted);
+        }
+
+        .page-intro {
+            padding: 180px 40px 80px;
+            max-width: 1100px;
+            margin-top: 20%;
+        }
+
+        .page-intro h1 {
+            font-size: clamp(48px, 10vw, 120px);
+            font-weight: 900;
+            line-height: 0.95;
+        }
+
+        .page-intro p {
+            margin-top: 32px;
+            max-width: 720px;
+            font-size: 20px;
+            color: var(--muted);
+            border-left: 3px solid var(--fg);
+            padding-left: 20px;
+        }
+        .title-label{
+            font-size: 30px;
+            padding-left: 40px;
+            letter-spacing: 4px;
+            color: var(--fg);
+            margin-bottom: 54px;
+        }
+
+        .logo-grid {
+            max-width: 1100px;
+            padding: 0 40px 120px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .logo-card {
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid #ffffff;
+            background: rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(6px);
+            text-align: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 0 3px #22d3ee33;
+        }
+
+        .logo-card img {
+            max-width: 100%;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+
+        .logo-card h3 {
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            padding: 40px;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 12px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        @media (max-width: 900px) {
+            .logo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin-left: 10px;
+            }
+            .page-intro {
+                margin-top: 40%;
+            }
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--muted);
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+        }
+    </style>
 </head>
 <body>
 
+<header>
+    <a href="index.html" class="logo">PAZARKOSKI.</a>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="https://github.com/Pazarkoskid">GITHUB</a>
+        <a href="mailto:pazarkoskidaniel123@gmail.com">EMAIL</a>
+    </nav>
+</header>
+
+<main>
+    <div class="page-intro">
+        <h1>OTHER<br>PROJECTS</h1>
+        <p>
+            A selection of logo designs, visual experiments, and small creative projects
+            created alongside my development work.
+        </p>
+    </div>
+
+    <section>
+        <h3 class="title-label">FinkiHUB Flat Logo</h3>
+        <section class="logo-grid">
+            <a href="#logo1" class="logo-card">
+                <img src="logo/flat_logo_FinkiHub/main_flat_logo_FinkiHub.png" alt="FinkiHub Flat Logo">
+                <h3>FinkiHub Flat Logo</h3>
+            </a>
+
+            <a href="#logo2" class="logo-card">
+                <img src="logo/flat_logo_FinkiHub/winter_theme_flat_logo_FinkiHub.png" alt="FinkiHub Flat Winter Edition Logo">
+                <h3>Winter Edition</h3>
+            </a>
+
+            <a href="#logo3" class="logo-card">
+                <img src="logo/flat_logo_FinkiHub/kolokviumska_flat_logo_FinkiHub.png" alt="FinkiHub Flat Kolokviumska Nedela Logo">
+                <h3>Kolokviumska Nedela</h3>
+            </a>
+
+            <a href="#logo4" class="logo-card">
+                <img src="logo/flat_logo_FinkiHub/ispitna_theme_flat_logo_FinkiHub.png" alt="FinkiHub Flat Ispitna Sesija">
+                <h3>Ispitna Sesija</h3>
+            </a>
+        </section>
+
+        <!-- LIGHTBOXES -->
+        <div id="logo1" class="lightbox">
+            <a href="#">
+                <img src="logo/flat_logo_FinkiHub/main_flat_logo_FinkiHub.png" alt="FinkiHub Logo">
+            </a>
+        </div>
+
+        <div id="logo2" class="lightbox">
+            <a href="#">
+                <img src="logo/flat_logo_FinkiHub/winter_theme_flat_logo_FinkiHub.png" alt="FinkiHub Flat Winter Edition Logo">
+            </a>
+        </div>
+
+        <div id="logo3" class="lightbox">
+            <a href="#">
+                <img src="logo/flat_logo_FinkiHub/kolokviumska_flat_logo_FinkiHub.png" alt="FinkiHub Flat Kolokviumska Nedela Logo">
+            </a>
+        </div>
+        <div id="logo4" class="lightbox" onclick="closeLightbox(event)">
+            <img src="logo/flat_logo_FinkiHub/ispitna_theme_flat_logo_FinkiHub.png" alt="FinkiHub Flat Ispitna Sesija">
+        </div>
+    </section>
+
+    <section>
+        <h3 class="title-label">FinkiHUB Mascot Logo</h3>
+        <section class="logo-grid">
+            <a href="#logo5" class="logo-card">
+                <img src="logo/mascot_logo_FinkiHub/flat_logo.png" alt="FinkiHub Mascot Logo">
+                <h3>FinkiHub Mascot Logo</h3>
+            </a>
+
+            <a href="#logo6" class="logo-card">
+                <img src="logo/mascot_logo_FinkiHub/standard_theme.jpg" alt="FinkiHub Mascot Logo standard theme ">
+                <h3>Standard Theme</h3>
+            </a>
+
+            <a href="#logo7" class="logo-card">
+                <img src="logo/mascot_logo_FinkiHub/Kolokviumska_theme.jpeg" alt="FinkiHub Mascot Kolokviumska Nedela Logo">
+                <h3>Kolokviumska Nedela</h3>
+            </a>
+
+            <a href="#logo8" class="logo-card">
+                <img src="logo/mascot_logo_FinkiHub/zima_theme.jpeg" alt="FinkiHub Mascot Logo Winter Theme">
+                <h3>Winter Theme</h3>
+            </a>
+
+            <a href="#logo9" class="logo-card">
+                <img src="logo/mascot_logo_FinkiHub/Prolet_theme.jpeg" alt="FinkiHub Mascot Logo Spring Theme">
+                <h3>Spring Theme</h3>
+            </a>
+
+            <a href="#logo10" class="logo-card">
+                <img src="logo/mascot_logo_FinkiHub/leto_theme.jpeg" alt="FinkiHub Mascot Logo Summer Theme">
+                <h3>Summer Theme</h3>
+            </a>
+
+            <a href="#logo11" class="logo-card">
+                <img src="logo/mascot_logo_FinkiHub/esen_theme.jpeg" alt="FinkiHub Mascot Logo Autumn Theme">
+                <h3>Autumn Theme</h3>
+            </a>
+        </section>
+
+        <!-- LIGHTBOXES -->
+        <div id="logo5" class="lightbox">
+            <a href="#">
+                <img src="logo/mascot_logo_FinkiHub/flat_logo.png" alt="FinkiHub Mascot Logo">
+            </a>
+        </div>
+
+        <div id="logo6" class="lightbox">
+            <a href="#">
+                <img src="logo/mascot_logo_FinkiHub/standard_theme.jpg" alt="FinkiHub Mascot Logo standard theme ">
+            </a>
+        </div>
+
+        <div id="logo7" class="lightbox">
+            <a href="#">
+                <img src="logo/mascot_logo_FinkiHub/Kolokviumska_theme.jpeg" alt="FinkiHub Mascot Kolokviumska Nedela Logo">
+            </a>
+        </div>
+
+        <div id="logo8" class="lightbox" onclick="closeLightbox(event)">
+            <img src="logo/mascot_logo_FinkiHub/zima_theme.jpeg" alt="FinkiHub Mascot Logo Winter Theme">
+        </div>
+
+        <div id="logo9" class="lightbox" onclick="closeLightbox(event)">
+            <img src="logo/mascot_logo_FinkiHub/Prolet_theme.jpeg" alt="FinkiHub Mascot Logo Spring Theme">
+        </div>
+
+        <div id="logo10" class="lightbox" onclick="closeLightbox(event)">
+            <img src="logo/mascot_logo_FinkiHub/leto_theme.jpeg" alt="FinkiHub Mascot Logo Summer Theme">
+        </div>
+
+        <div id="logo11" class="lightbox" onclick="closeLightbox(event)">
+            <img src="logo/mascot_logo_FinkiHub/esen_theme.jpeg" alt="FinkiHub Mascot Logo Autumn Theme">
+        </div>
+    </section>
+
+    <section>
+        <h3 class="title-label">LabinoBoats Flat Logo</h3>
+        <section class="logo-grid">
+            <a href="#logo12" class="logo-card">
+                <img src="logo/flat_logo_LabinoBoats/flat_logo_LabinoBoats.png" alt="LabinoBoats Flat Logo">
+                <h3>LabinoBoats Flat Logo</h3>
+            </a>
+
+        </section>
+
+        <!-- LIGHTBOXES -->
+        <div id="logo12" class="lightbox">
+            <a href="#">
+                <img src="logo/flat_logo_LabinoBoats/flat_logo_LabinoBoats.png" alt="LabinoBoats Flat Logo">
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <h3 class="title-label">Villa D&M Flat Logo</h3>
+        <section class="logo-grid">
+            <a href="#logo13" class="logo-card">
+                <img src="logo/flat_logo_VillaD&M/VillaDM_flat_logo.png" alt="Villa D&M Flat Logo">
+                <h3>LabinoBoats Flat Logo</h3>
+            </a>
+
+        </section>
+
+        <!-- LIGHTBOXES -->
+        <div id="logo13" class="lightbox">
+            <a href="#">
+                <img src="logo/flat_logo_VillaD&M/VillaDM_flat_logo.png" alt="Villa D&M Flat Logo">
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Pazarkoski. All rights reserved.
+    </footer>
+</main>
+<script>
+    function closeLightbox(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        history.pushState("", document.title, window.location.pathname + window.location.search);
+    }
+</script>
 </body>
 </html>
