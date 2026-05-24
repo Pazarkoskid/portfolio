@@ -167,6 +167,35 @@
       box-shadow: 0 0 0 3px #22d3ee33;
     }
 
+    /* Clickable project card (links to detail page) */
+    a.project-clickable {
+      color: inherit;
+      text-decoration: none;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 80px;
+      padding: 24px 28px;
+      border-radius: 15px;
+      border: 1px solid #ffffff;
+      background: rgba(0, 0, 0, 0.37);
+      backdrop-filter: blur(2px);
+      transition: transform .25s ease, box-shadow .25s ease;
+      cursor: pointer;
+    }
+    a.project-clickable:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 0 3px #22d3ee33;
+    }
+
+    .project-cta {
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: #22d3ee;
+      font-weight: 700;
+      white-space: nowrap;
+      align-self: end;
+    }
+
     .project h3 {
       font-size: 32px;
       font-weight: 900;
@@ -306,8 +335,8 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 40px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
     }
 
     .skill-card {
@@ -475,6 +504,55 @@
   <section class="projects">
     <div class="title-label">PROJECTS</div>
 
+    <a href="projects/fink-io.html" class="project project-clickable">
+      <div class="project-main">
+        <h3>Fink.io — AI Quiz Platform за ФИНКИ</h3>
+
+        <p>
+          A full-stack educational platform for ФИНКИ students. Upload study materials (PDF, DOCX, PPTX) and AI generates quality quizzes in Macedonian using Google Gemini. Features include real-time WebSocket chat with online presence, friends system with notifications, manual & AI-generated quizzes, badges, leaderboards, instructor analytics dashboard, and role-based permissions. Supports light and dark themes.
+        </p>
+
+        <div class="project-tags">
+          <span>Django 5</span>
+          <span>Django Channels</span>
+          <span>React 18</span>
+          <span>Vite</span>
+          <span>Tailwind CSS</span>
+          <span>PostgreSQL</span>
+          <span>WebSocket</span>
+          <span>Google Gemini AI</span>
+        </div>
+      </div>
+
+      <div class="project-links">
+        <span class="project-cta">VIEW DETAILS →</span>
+      </div>
+    </a>
+
+    <a href="projects/air-quality.html" class="project project-clickable">
+      <div class="project-main">
+        <h3>Air Quality AI — Скопје</h3>
+
+        <p>
+          An intelligent real-time air quality monitoring system for Skopje with AI-powered forecasts up to 72 hours ahead. Features an interactive map with 9 monitoring stations, historical data analysis, notifications, CSV/PDF export, and a custom BiLSTM neural network trained on data from 2020 to 2026.
+        </p>
+
+        <div class="project-tags">
+          <span>Django 5</span>
+          <span>PostgreSQL</span>
+          <span>Supabase</span>
+          <span>TensorFlow / Keras</span>
+          <span>BiLSTM</span>
+          <span>Leaflet.js</span>
+          <span>Chart.js</span>
+        </div>
+      </div>
+
+      <div class="project-links">
+        <span class="project-cta">VIEW DETAILS →</span>
+      </div>
+    </a>
+
     <div class="project">
       <div class="project-main">
         <h3>Labino Boats Website</h3>
@@ -576,40 +654,57 @@
       <div class="skill-card">
         <h4>FRONTEND</h4>
         <ul>
-          <li>HTML5 / CSS</li>
+          <li>HTML5 / CSS3</li>
           <li>JavaScript / TypeScript</li>
-          <li>Bootstrap</li>
-          <li>React</li>
+          <li>React 18</li>
+          <li>Vite</li>
           <li>Tailwind CSS</li>
+          <li>Bootstrap</li>
+          <li>Zustand (state management)</li>
+          <li>React Router</li>
+          <li>Axios</li>
+          <li>Chart.js / Leaflet.js</li>
         </ul>
       </div>
 
       <div class="skill-card">
         <h4>BACKEND</h4>
         <ul>
-          <li>C</li>
-          <li>C++</li>
-          <li>Python</li>
-          <li>Django</li>
+          <li>Python 3.12</li>
+          <li>Django 5 / Django REST Framework</li>
+          <li>Django Channels + Daphne (WebSocket)</li>
+          <li>JWT Authentication</li>
           <li>Java / Spring Boot</li>
+          <li>C / C++</li>
           <li>REST APIs</li>
-          <li>Authentication & Authorization (basic)</li>
-          <li>PostgreSQL / MySQL</li>
+          <li>PostgreSQL / MySQL / SQLite</li>
+          <li>Supabase</li>
         </ul>
       </div>
 
       <div class="skill-card">
-        <h4>MOBILE & UI</h4>
+        <h4>AI / ML</h4>
         <ul>
-          <li>Flutter</li>
-          <li>Dart</li>
+          <li>Google Gemini API</li>
+          <li>TensorFlow / Keras</li>
+          <li>BiLSTM neural networks</li>
+          <li>Time series forecasting</li>
+          <li>Data analysis (Pandas, NumPy)</li>
+          <li>Prompt engineering</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h4>MOBILE & UI/UX</h4>
+        <ul>
+          <li>Flutter / Dart</li>
           <li>FlutterFlow</li>
-          <li>React</li>
+          <li>Android Studio</li>
           <li>Figma (UI/UX)</li>
           <li>Prototyping</li>
           <li>User-Centered Design</li>
-          <li>Android Studio</li>
           <li>Responsive Design</li>
+          <li>Dark mode / Theming</li>
         </ul>
       </div>
 
@@ -618,8 +713,23 @@
         <ul>
           <li>Git & GitHub</li>
           <li>Docker (basic)</li>
+          <li>Render.com deployment</li>
+          <li>GitHub Pages</li>
           <li>Firebase</li>
-          <li>Vite (basic)</li>
+          <li>Linux / Bash</li>
+          <li>npm / pip</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h4>OTHER</h4>
+        <ul>
+          <li>WebSockets / real-time apps</li>
+          <li>File processing (PDF, DOCX, PPTX)</li>
+          <li>OAuth & session management</li>
+          <li>CORS / CSRF security</li>
+          <li>CI/CD basics</li>
+          <li>Agile / Team collaboration</li>
         </ul>
       </div>
     </div>

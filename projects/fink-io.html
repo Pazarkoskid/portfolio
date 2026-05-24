@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fink.io · Pazarkoski.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fink.io — AI-powered quiz platform for FINKI students. Full-stack with Django, React, WebSocket and Google Gemini AI.">
+  <link rel="icon" type="image/png" href="../photos/dp_logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<header>
+  <a href="../index.html" class="logo">PAZARKOSKI.</a>
+  <nav>
+    <a href="../index.html">HOME</a>
+    <a href="../index.html#projects">PROJECTS</a>
+    <a href="https://github.com/Pazarkoskid">GITHUB</a>
+    <a href="mailto:pazarkoskidaniel123@gmail.com">EMAIL</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="page-intro">
+    <a href="../index.html" class="back-link">← BACK TO PROJECTS</a>
+    <div class="project-meta">
+      <span>FULL-STACK</span>
+      <span>AI</span>
+      <span>2026</span>
+    </div>
+    <h1>Fink.io<br><span class="subtitle">AI Quiz Platform за ФИНКИ</span></h1>
+    <p>
+      A full-stack educational platform where ФИНКИ students upload study materials
+      (PDF, DOCX, PPTX) and AI generates quality quizzes in Macedonian.
+      Built with Django + Channels, React + Vite, and Google Gemini AI.
+      Features real-time WebSocket chat, friends system with notifications,
+      badges, leaderboards, and instructor analytics.
+    </p>
+
+    <div class="cta-links">
+      <a href="https://fink-io-frontend.onrender.com" target="_blank" rel="noopener" class="cta-btn primary">VIEW LIVE →</a>
+      <a href="https://github.com/Pazarkoskid/Fink.io" target="_blank" rel="noopener" class="cta-btn">GITHUB ↗</a>
+    </div>
+  </section>
+
+  <!-- ===== SCREENSHOTS ===== -->
+  <section class="block">
+    <h2 class="title-label">SCREENSHOTS</h2>
+
+    <div class="screenshot-grid">
+      <a href="#shot1" class="screenshot-card">
+        <img src="images/fink-io/01_devices.png" alt="Fink.io homepage on multiple devices">
+        <div class="screenshot-caption">Homepage — laptop, tablet, mobile</div>
+      </a>
+
+      <a href="#shot2" class="screenshot-card">
+        <img src="images/fink-io/02_dark_dashboard.png" alt="Dark mode instructor dashboard">
+        <div class="screenshot-caption">Dark mode · Instructor dashboard</div>
+      </a>
+
+      <a href="#shot3" class="screenshot-card">
+        <img src="images/fink-io/03_mobile.png" alt="Mobile profile and chat">
+        <div class="screenshot-caption">Mobile · Profile + real-time chat</div>
+      </a>
+
+      <a href="#shot4" class="screenshot-card">
+        <img src="images/fink-io/04_quiz_play.png" alt="Quiz play screen">
+        <div class="screenshot-caption">Playing a quiz</div>
+      </a>
+    </div>
+
+    <!-- Lightboxes -->
+    <div id="shot1" class="lightbox"><a href="#">
+      <img src="images/fink-io/01_devices.png" alt="Devices"></a></div>
+    <div id="shot2" class="lightbox"><a href="#">
+      <img src="images/fink-io/02_dark_dashboard.png" alt="Dashboard"></a></div>
+    <div id="shot3" class="lightbox"><a href="#">
+      <img src="images/fink-io/03_mobile.png" alt="Mobile"></a></div>
+    <div id="shot4" class="lightbox"><a href="#">
+      <img src="images/fink-io/04_quiz_play.png" alt="Quiz"></a></div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="block">
+    <h2 class="title-label">FEATURES</h2>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">🤖</div>
+        <h3>AI Quiz Generation</h3>
+        <p>Upload PDF/DOCX/PPTX → Google Gemini extracts text and generates quality Macedonian quizzes with multiple-choice, multi-select, and essay questions.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">💬</div>
+        <h3>Real-time Chat</h3>
+        <p>WebSocket chat between friends with typing indicators, online presence, and optimistic UI (no message duplication).</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">👥</div>
+        <h3>Friends System</h3>
+        <p>Facebook-style requests → accept/reject. Search users, view public profiles, see online status, with bell notifications for activity.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🏆</div>
+        <h3>Badges & Leaderboards</h3>
+        <p>14 badge types × 4 tiers (bronze/silver/gold/diamond). Streaks, points, rank within role. Auto-awarded via Django signals.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>Instructor Analytics</h3>
+        <p>Per-quiz dashboard with average score, score distribution histogram, completion rate. Clickable stat cards switch between drafts/published/games tabs.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🎨</div>
+        <h3>Light & Dark Themes</h3>
+        <p>Toggle between 3 modes: Light / Dark / System. Glassmorphism design with CSS variables. Anti-flash on page load.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🔐</div>
+        <h3>Role-based Access</h3>
+        <p>5 roles: guest, student, instructor, moderator, admin. JWT auth with 24h access + 30d refresh tokens.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📚</div>
+        <h3>170 Subjects Seeded</h3>
+        <p>Pre-populated with all FINKI subjects across 4 years × 8 semesters, mandatory + elective groups. Personalized by student's current year.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARCHITECTURE ===== -->
+  <section class="block">
+    <h2 class="title-label">ARCHITECTURE</h2>
+
+    <div class="arch-diagram">
+      <div class="arch-row">
+        <div class="arch-node client">
+          <div class="arch-node-label">CLIENT</div>
+          <div class="arch-node-title">React + Vite</div>
+          <div class="arch-node-desc">Tailwind, Zustand, React Router</div>
+        </div>
+      </div>
+
+      <div class="arch-arrow">↓ HTTP / WebSocket ↓</div>
+
+      <div class="arch-row">
+        <div class="arch-node server">
+          <div class="arch-node-label">SERVER</div>
+          <div class="arch-node-title">Django 5 + Daphne (ASGI)</div>
+          <div class="arch-node-desc">REST API · WebSocket · JWT</div>
+        </div>
+      </div>
+
+      <div class="arch-arrow">↓</div>
+
+      <div class="arch-row arch-row-3">
+        <div class="arch-node db">
+          <div class="arch-node-label">DATA</div>
+          <div class="arch-node-title">PostgreSQL</div>
+          <div class="arch-node-desc">Users · Quizzes · Materials · Chat</div>
+        </div>
+        <div class="arch-node ai">
+          <div class="arch-node-label">AI</div>
+          <div class="arch-node-title">Google Gemini</div>
+          <div class="arch-node-desc">Multi-model fallback chain</div>
+        </div>
+        <div class="arch-node files">
+          <div class="arch-node-label">FILES</div>
+          <div class="arch-node-title">Material Storage</div>
+          <div class="arch-node-desc">PDF / DOCX / PPTX extraction</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="arch-note">
+      The backend serves both HTTP (Django REST Framework) and WebSocket (Channels + Daphne) on the same ASGI app.
+      WebSocket connections use a JWT token in the query string, authenticated by a custom middleware.
+      Presence (online/offline) is tracked in-memory with a thread-safe counter — multi-tab support per user.
+    </p>
+  </section>
+
+  <!-- ===== TECH STACK ===== -->
+  <section class="block">
+    <h2 class="title-label">TECH STACK</h2>
+
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h3>BACKEND</h3>
+        <ul>
+          <li><span>Python</span> <code>3.12</code></li>
+          <li><span>Django</span> <code>5.x</code></li>
+          <li><span>Django REST Framework</span> <code>3.15</code></li>
+          <li><span>Django Channels</span> <code>4.1+</code></li>
+          <li><span>Daphne (ASGI server)</span> <code>4.1+</code></li>
+          <li><span>simplejwt</span> <code>5.x</code></li>
+          <li><span>google-genai SDK</span> <code>1.0+</code></li>
+          <li><span>pdfplumber / python-docx / python-pptx</span></li>
+          <li><span>django-cors-headers</span></li>
+        </ul>
+      </div>
+
+      <div class="stack-card">
+        <h3>FRONTEND</h3>
+        <ul>
+          <li><span>React</span> <code>18.x</code></li>
+          <li><span>Vite</span> <code>5.x</code></li>
+          <li><span>Tailwind CSS</span> <code>3.x</code></li>
+          <li><span>Zustand</span> <code>4.x</code></li>
+          <li><span>React Router</span> <code>6.x</code></li>
+          <li><span>Axios</span></li>
+          <li><span>Lucide React (icons)</span></li>
+          <li><span>Native WebSocket API</span></li>
+        </ul>
+      </div>
+
+      <div class="stack-card">
+        <h3>INFRASTRUCTURE</h3>
+        <ul>
+          <li><span>PostgreSQL</span> <code>16</code> (production)</li>
+          <li><span>SQLite</span> (development)</li>
+          <li><span>Render.com</span> (hosting)</li>
+          <li><span>Google Gemini API</span> (free tier)</li>
+          <li>Multi-model fallback: 2.5-flash-lite → 2.5-flash → 2.0-flash → 1.5-flash</li>
+          <li>In-memory channel layer (single instance)</li>
+        </ul>
+      </div>
+
+      <div class="stack-card">
+        <h3>DESIGN SYSTEM</h3>
+        <ul>
+          <li><span>Fraunces</span> (display serif)</li>
+          <li><span>Manrope</span> (UI sans)</li>
+          <li><span>JetBrains Mono</span> (meta)</li>
+          <li>Accent: <code>#ff5b1f</code> (бренд оранж)</li>
+          <li>CSS variables for theming</li>
+          <li>Glassmorphism + backdrop-blur</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== API ENDPOINTS ===== -->
+  <section class="block">
+    <h2 class="title-label">API ENDPOINTS</h2>
+
+    <div class="api-grid">
+      <div class="api-group">
+        <h3>AUTH</h3>
+<pre><code>POST   /api/auth/token/                login
+POST   /api/auth/token/refresh/        refresh
+POST   /api/accounts/register/         register</code></pre>
+      </div>
+
+      <div class="api-group">
+        <h3>ACCOUNTS & FRIENDS</h3>
+<pre><code>GET    /api/accounts/me/                              мојот профил
+PATCH  /api/accounts/me/                              уреди (multipart)
+GET    /api/accounts/me/subjects/                     мои предмети
+GET    /api/accounts/me/friend-requests/              pending барања
+GET    /api/accounts/users/&lt;id&gt;/profile/              јавен профил
+POST   /api/accounts/users/&lt;id&gt;/friend-request/       испрати
+POST   /api/accounts/friend-requests/&lt;id&gt;/respond/    accept/reject
+DELETE /api/accounts/users/&lt;id&gt;/friend/               отстрани
+GET    /api/accounts/search/?q=...                    пребарувај</code></pre>
+      </div>
+
+      <div class="api-group">
+        <h3>MATERIALS (БАЗИ)</h3>
+<pre><code>GET    /api/materials/databases/               јавен каталог
+POST   /api/materials/                          прикачи
+POST   /api/materials/&lt;id&gt;/like/                like
+POST   /api/materials/&lt;id&gt;/save/                bookmark
+POST   /api/materials/&lt;id&gt;/download/            track
+GET    /api/materials/saved/                    мои зачувани</code></pre>
+      </div>
+
+      <div class="api-group">
+        <h3>QUIZZES</h3>
+<pre><code>GET    /api/quizzes/                  листа + филтри
+GET    /api/quizzes/mine/             мои
+GET    /api/quizzes/saved/            зачувани
+POST   /api/quizzes/create/           мануелно
+POST   /api/quizzes/generate/         AI генерирај од material
+POST   /api/quizzes/&lt;id&gt;/publish/
+POST   /api/quizzes/&lt;id&gt;/like/
+POST   /api/quizzes/&lt;id&gt;/save/
+GET    /api/quizzes/&lt;id&gt;/play/        играj
+POST   /api/quizzes/&lt;id&gt;/submit/      одговори
+GET    /api/quizzes/attempts/         моја историја</code></pre>
+      </div>
+
+      <div class="api-group">
+        <h3>NOTIFICATIONS</h3>
+<pre><code>GET    /api/notifications/             листа
+GET    /api/notifications/count/       непрочитани
+POST   /api/notifications/&lt;id&gt;/read/
+POST   /api/notifications/read-all/</code></pre>
+      </div>
+
+      <div class="api-group">
+        <h3>CHAT (REST + WS)</h3>
+<pre><code>GET    /api/chat/conversations/                разговори
+POST   /api/chat/conversations/start/          {user_id}
+GET    /api/chat/conversations/&lt;id&gt;/messages/
+POST   /api/chat/conversations/&lt;id&gt;/read/
+GET    /api/chat/unread-count/
+GET    /api/chat/online-friends/
+
+WS:    wss://api/ws/chat/?token=&lt;jwt&gt;</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROLES ===== -->
+  <section class="block">
+    <h2 class="title-label">ROLES & PERMISSIONS</h2>
+
+    <table class="roles-table">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Capabilities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>guest</code></td>
+          <td>View public quizzes (no login)</td>
+        </tr>
+        <tr>
+          <td><code>student</code></td>
+          <td>Play quizzes, upload materials, create quizzes, chat, friends</td>
+        </tr>
+        <tr>
+          <td><code>instructor</code></td>
+          <td>+ Command dashboard, per-quiz analytics</td>
+        </tr>
+        <tr>
+          <td><code>moderator</code></td>
+          <td>+ Review reported content queue</td>
+        </tr>
+        <tr>
+          <td><code>admin</code></td>
+          <td>+ User management, role changes, platform-wide control</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===== CHALLENGES ===== -->
+  <section class="block">
+    <h2 class="title-label">CHALLENGES SOLVED</h2>
+
+    <div class="challenge-list">
+      <div class="challenge">
+        <h3>WebSocket message duplication</h3>
+        <p>Initially, sent messages appeared twice (optimistic UI + WS echo). Solved by giving each message a <code>temp_id</code> from the client; the server replies only to the sender with <code>message_confirmed</code> containing that temp_id, allowing replacement of the optimistic entry without dupes.</p>
+      </div>
+
+      <div class="challenge">
+        <h3>Gemini API 503 — model overload</h3>
+        <p>The free tier of Gemini frequently returns "model overloaded" errors. Implemented a fallback chain that tries 4 models with 2 retries each (2s backoff): 2.5-flash-lite → 2.5-flash → 2.0-flash → 1.5-flash. Success rate jumped from ~40% to ~95%.</p>
+      </div>
+
+      <div class="challenge">
+        <h3>Online presence across multiple tabs</h3>
+        <p>A user with 2 tabs open should stay online if they close one. Built a thread-safe in-memory counter that tracks active connections per user — only broadcast "offline" event when the count hits zero. Friends get notified via WS group messages.</p>
+      </div>
+
+      <div class="challenge">
+        <h3>Dark theme — hardcoded colors everywhere</h3>
+        <p>67 hardcoded color classes (bg-cream, text-ink-900, etc.) made some pages invisible in dark mode. Migrated to semantic CSS variables (bg-bg, text-fg, text-muted) with a batch sed script across all 14 pages.</p>
+      </div>
+
+      <div class="challenge">
+        <h3>Render free tier sleep</h3>
+        <p>Free tier instances spin down after 15min idle. WebSocket reconnects automatically with exponential backoff; users see a "Се поврзува…" indicator. First request after sleep takes 30-60s to wake up — acceptable for a student platform.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="block end-cta">
+    <h2>Try it. Break it. Tell me what to fix.</h2>
+    <div class="cta-links">
+      <a href="https://fink-io-frontend.onrender.com" target="_blank" rel="noopener" class="cta-btn primary">LAUNCH APP →</a>
+      <a href="https://github.com/Pazarkoskid/Fink.io" target="_blank" rel="noopener" class="cta-btn">VIEW CODE ↗</a>
+      <a href="mailto:pazarkoskidaniel123@gmail.com" class="cta-btn">EMAIL ME</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Pazarkoski. All rights reserved.
+  </footer>
+</main>
+
+</body>
+</html>

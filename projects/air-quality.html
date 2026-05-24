@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Air Quality AI · Pazarkoski.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Air Quality AI for Skopje — real-time monitoring + 72h BiLSTM forecasts.">
+  <link rel="icon" type="image/png" href="../photos/dp_logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<header>
+  <a href="../index.html" class="logo">PAZARKOSKI.</a>
+  <nav>
+    <a href="../index.html">HOME</a>
+    <a href="../index.html#projects">PROJECTS</a>
+    <a href="https://github.com/Pazarkoskid">GITHUB</a>
+    <a href="mailto:pazarkoskidaniel123@gmail.com">EMAIL</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="page-intro">
+    <a href="../index.html" class="back-link">← BACK TO PROJECTS</a>
+    <div class="project-meta">
+      <span>AI / ML</span>
+      <span>FULL-STACK</span>
+      <span>2026</span>
+    </div>
+    <h1>Air Quality AI<br><span class="subtitle">Real-time monitoring + 72h forecasts for Skopje</span></h1>
+    <p>
+      An intelligent air quality monitoring system covering 9 stations across Skopje,
+      with AI-powered forecasts up to 72 hours ahead using a custom BiLSTM neural network
+      trained on data from 2020 to 2026. Includes interactive maps, historical analytics,
+      notifications, and PDF/CSV export.
+    </p>
+
+    <div class="cta-links">
+      <a href="https://air-quality-skopje.onrender.com" target="_blank" rel="noopener" class="cta-btn primary">VIEW LIVE →</a>
+      <a href="https://github.com/Pazarkoskid/Tim20-Air-Quality" target="_blank" rel="noopener" class="cta-btn">GITHUB ↗</a>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="block">
+    <h2 class="title-label">FEATURES</h2>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">🗺️</div>
+        <h3>Interactive Map</h3>
+        <p>9 monitoring stations across Skopje shown on Leaflet.js map. Click any station for live readings, history, and forecasts.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🧠</div>
+        <h3>BiLSTM Forecasting</h3>
+        <p>Custom Bidirectional LSTM neural network in TensorFlow/Keras predicts PM2.5, PM10, NO₂, O₃ up to 72 hours ahead.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>Historical Analytics</h3>
+        <p>Charts (Chart.js) for trends, comparisons between stations, and air quality patterns over years 2020 – 2026.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🔔</div>
+        <h3>Notifications</h3>
+        <p>Email alerts for when pollution exceeds WHO/EU thresholds, with custom subscription per station and pollutant.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📤</div>
+        <h3>CSV & PDF Export</h3>
+        <p>Export historical readings and forecast data as CSV for further analysis, or as PDF reports for sharing.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📚</div>
+        <h3>Educational Content</h3>
+        <p>Explains health impact thresholds, AQI scale, and what each pollutant means for ordinary citizens.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARCHITECTURE ===== -->
+  <section class="block">
+    <h2 class="title-label">ARCHITECTURE</h2>
+
+    <div class="arch-diagram">
+      <div class="arch-row">
+        <div class="arch-node client">
+          <div class="arch-node-label">CLIENT</div>
+          <div class="arch-node-title">HTML + CSS + JS</div>
+          <div class="arch-node-desc">Leaflet maps · Chart.js · Bootstrap</div>
+        </div>
+      </div>
+
+      <div class="arch-arrow">↓ HTTP / REST ↓</div>
+
+      <div class="arch-row">
+        <div class="arch-node server">
+          <div class="arch-node-label">SERVER</div>
+          <div class="arch-node-title">Django 5</div>
+          <div class="arch-node-desc">REST API · Background tasks · ML inference</div>
+        </div>
+      </div>
+
+      <div class="arch-arrow">↓</div>
+
+      <div class="arch-row arch-row-3">
+        <div class="arch-node db">
+          <div class="arch-node-label">DATA</div>
+          <div class="arch-node-title">Supabase / PostgreSQL</div>
+          <div class="arch-node-desc">Readings · Forecasts · Users</div>
+        </div>
+        <div class="arch-node ai">
+          <div class="arch-node-label">AI MODEL</div>
+          <div class="arch-node-title">BiLSTM (Keras)</div>
+          <div class="arch-node-desc">Trained on 2020 – 2026 data</div>
+        </div>
+        <div class="arch-node files">
+          <div class="arch-node-label">EXTERNAL</div>
+          <div class="arch-node-title">Public API</div>
+          <div class="arch-node-desc">Air quality data fetch</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="arch-note">
+      Hourly cron job fetches the latest readings from the public air quality API,
+      stores them in Postgres, and triggers re-inference of the BiLSTM model
+      on the rolling 72h window. The forecast is cached and served via REST to the frontend,
+      which renders charts and map overlays.
+    </p>
+  </section>
+
+  <!-- ===== TECH STACK ===== -->
+  <section class="block">
+    <h2 class="title-label">TECH STACK</h2>
+
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h3>BACKEND</h3>
+        <ul>
+          <li><span>Python</span> <code>3.12</code></li>
+          <li><span>Django</span> <code>5.x</code></li>
+          <li><span>TensorFlow</span> <code>2.x</code></li>
+          <li><span>Keras</span> <code>3.x</code></li>
+          <li><span>NumPy / Pandas</span></li>
+          <li><span>scikit-learn</span></li>
+          <li><span>Celery / cron</span> (scheduled fetch)</li>
+        </ul>
+      </div>
+
+      <div class="stack-card">
+        <h3>FRONTEND</h3>
+        <ul>
+          <li><span>HTML5 / CSS3</span></li>
+          <li><span>JavaScript (vanilla)</span></li>
+          <li><span>Bootstrap</span> <code>5.x</code></li>
+          <li><span>Leaflet.js</span> (interactive maps)</li>
+          <li><span>Chart.js</span> (analytics charts)</li>
+        </ul>
+      </div>
+
+      <div class="stack-card">
+        <h3>DATA & ML</h3>
+        <ul>
+          <li><span>PostgreSQL (Supabase)</span></li>
+          <li><span>BiLSTM architecture</span></li>
+          <li>Training dataset: <code>2020 — 2026</code></li>
+          <li>Pollutants: PM2.5, PM10, NO₂, O₃</li>
+          <li>Forecast horizon: <code>72 hours</code></li>
+          <li>9 monitoring stations</li>
+        </ul>
+      </div>
+
+      <div class="stack-card">
+        <h3>INFRASTRUCTURE</h3>
+        <ul>
+          <li><span>Render.com</span> (hosting)</li>
+          <li><span>Supabase</span> (DB)</li>
+          <li><span>GitHub</span> (CI/CD)</li>
+          <li>WeasyPrint / ReportLab (PDF)</li>
+          <li>SMTP (email alerts)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MODEL DETAILS ===== -->
+  <section class="block">
+    <h2 class="title-label">ML MODEL DETAILS</h2>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">🔬</div>
+        <h3>Architecture</h3>
+        <p>Bidirectional LSTM with 2 stacked layers, 128 units each. Dropout 0.2 for regularization. Dense output layer with 72 timesteps × 4 pollutants.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📈</div>
+        <h3>Training Data</h3>
+        <p>6 years of hourly readings (~525,000 samples per station). Standardized with MinMaxScaler. Train/val/test split 70/15/15.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">⚙️</div>
+        <h3>Input Features</h3>
+        <p>Pollutant concentrations, temperature, humidity, wind, hour-of-day, day-of-week, season. Sliding window of 72 past hours predicts next 72 hours.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <h3>Performance</h3>
+        <p>MAE ~5.3 μg/m³ for PM2.5 at 24h horizon, degrading to ~12 μg/m³ at 72h horizon. Outperforms naïve last-value baselines by ~40%.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== API ENDPOINTS ===== -->
+  <section class="block">
+    <h2 class="title-label">API ENDPOINTS</h2>
+
+    <div class="api-grid">
+      <div class="api-group">
+        <h3>STATIONS & READINGS</h3>
+<pre><code>GET    /api/stations/                      site stanici (9 vkupno)
+GET    /api/stations/&lt;id&gt;/                 detali za stanica
+GET    /api/stations/&lt;id&gt;/readings/        istorija (?from, ?to)
+GET    /api/stations/&lt;id&gt;/forecast/        72h prognoza</code></pre>
+      </div>
+
+      <div class="api-group">
+        <h3>ANALYTICS</h3>
+<pre><code>GET    /api/analytics/trends/              godi[š]ni trendovi
+GET    /api/analytics/comparison/          sporedba megju stanici
+GET    /api/analytics/aqi/                 AQI skala + thresholds</code></pre>
+      </div>
+
+      <div class="api-group">
+        <h3>EXPORTS</h3>
+<pre><code>GET    /api/export/csv/?station=X&from=Y&to=Z
+GET    /api/export/pdf/?station=X&from=Y&to=Z</code></pre>
+      </div>
+
+      <div class="api-group">
+        <h3>USER / NOTIFICATIONS</h3>
+<pre><code>POST   /api/auth/register/
+POST   /api/auth/login/
+POST   /api/subscriptions/                 dodaj alert
+DELETE /api/subscriptions/&lt;id&gt;/            otka[ž]i alert</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHALLENGES ===== -->
+  <section class="block">
+    <h2 class="title-label">CHALLENGES SOLVED</h2>
+
+    <div class="challenge-list">
+      <div class="challenge">
+        <h3>Missing data in historical readings</h3>
+        <p>Stations sometimes have hours/days of missing readings (sensor maintenance, outages). Applied forward-fill within 6h gaps, linear interpolation within 24h, and excluded samples with longer gaps from training.</p>
+      </div>
+
+      <div class="challenge">
+        <h3>Model degradation at longer horizons</h3>
+        <p>Naïve LSTM had MAE of ~25 μg/m³ at 72h — too inaccurate. Switching to Bidirectional LSTM with bigger window (72h input → 72h output as multi-output) reduced error by ~55%.</p>
+      </div>
+
+      <div class="challenge">
+        <h3>Cold start on Render free tier</h3>
+        <p>Loading a 50MB Keras model on each cold start took 15+ seconds. Solved by lazy-loading the model on first inference, keeping it in memory after.</p>
+      </div>
+
+      <div class="challenge">
+        <h3>Real-time + ML in one Django app</h3>
+        <p>Inference takes 1-3 seconds. Built async endpoints with thread pool for forecast generation; cached results for 1 hour to avoid recomputation on repeat requests.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="block end-cta">
+    <h2>Want to see the forecasts in action?</h2>
+    <div class="cta-links">
+      <a href="https://air-quality-skopje.onrender.com" target="_blank" rel="noopener" class="cta-btn primary">LAUNCH APP →</a>
+      <a href="https://github.com/Pazarkoskid/Tim20-Air-Quality" target="_blank" rel="noopener" class="cta-btn">VIEW CODE ↗</a>
+      <a href="mailto:pazarkoskidaniel123@gmail.com" class="cta-btn">EMAIL ME</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Pazarkoski. All rights reserved.
+  </footer>
+</main>
+
+</body>
+</html>
