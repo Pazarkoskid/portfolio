@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ChildSystem · Pazarkoski.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ChildSystem — collaborative web app for monitoring and evaluating child development. Built with Django, Bootstrap, and JWT auth.">
+  <link rel="icon" type="image/png" href="../photos/dp_logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="project-detail.css">
+</head>
+<body>
+
+<header>
+  <a href="../index.html" class="logo">PAZARKOSKI.</a>
+  <nav>
+    <a href="../index.html">HOME</a>
+    <a href="../index.html#projects">PROJECTS</a>
+    <a href="https://github.com/Pazarkoskid">GITHUB</a>
+    <a href="mailto:pazarkoskidaniel123@gmail.com">EMAIL</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="page-intro">
+    <a href="../index.html" class="back-link">← BACK TO PROJECTS</a>
+    <div class="project-meta">
+      <span>TEAM PROJECT</span>
+      <span>HEALTHCARE</span>
+      <span>2025</span>
+    </div>
+    <h1>ChildSystem<br><span class="subtitle">Child Development Monitoring Web App</span></h1>
+    <p>
+      A collaboratively developed web platform for monitoring and evaluating child development.
+      Parents register, add their children, and complete developmental questionnaires. Therapists then review the data,
+      assign scores, and provide professional feedback. The system supports early detection of developmental issues
+      and improves communication between families and specialists.
+    </p>
+
+    <div class="cta-links">
+      <a href="https://github.com/Pazarkoskid/ChildSystem" target="_blank" rel="noopener" class="cta-btn primary">VIEW CODE →</a>
+      <a href="https://github.com/NaumVlavceski/ChildSystem" target="_blank" rel="noopener" class="cta-btn">ORIGINAL REPO ↗</a>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="block">
+    <h2 class="title-label">FEATURES</h2>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">👤</div>
+        <h3>User Authentication</h3>
+        <p>Secure login and registration with JWT tokens. Email verification on signup, password reset via email link.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🧒</div>
+        <h3>Child Profiles</h3>
+        <p>Parents add multiple children with date of birth, gender, allergies, and medical notes. Each child has a personal timeline of development.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📋</div>
+        <h3>Development Questionnaires</h3>
+        <p>Age-appropriate developmental milestone questionnaires (motor skills, cognitive, social, language) completed by parents periodically.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">👨‍⚕️</div>
+        <h3>Therapist Review</h3>
+        <p>Therapists access submitted questionnaires, assign scores per category, and provide structured written feedback with recommended next steps.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📅</div>
+        <h3>Appointments & Scheduling</h3>
+        <p>Parents request consultations with therapists. The system manages availability, sends confirmations, and reminders.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">⭐</div>
+        <h3>Feedback & Reviews</h3>
+        <p>Bidirectional review system: parents rate therapist consultations, therapists provide developmental assessments.</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">🔐</div>
+        <h3>Role-Based Access</h3>
+        <p>Three roles with distinct permissions: Admin (full access), Parent (own children only), Therapist (assigned patients).</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">📊</div>
+        <h3>Dashboard</h3>
+        <p>Role-specific dashboards: parents see their children's progress; therapists see their case load; admins see platform statistics.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ARCHITECTURE ===== -->
+  <section class="block">
+    <h2 class="title-label">ARCHITECTURE</h2>
+
+    <div class="arch-diagram">
+      <div class="arch-row">
+        <div class="arch-node client">
+          <div class="arch-node-label">CLIENT</div>
+          <div class="arch-node-title">HTML + CSS + JS</div>
+          <div class="arch-node-desc">Bootstrap · jQuery · vanilla JS</div>
+        </div>
+      </div>
+
+      <div class="arch-arrow">↓ HTTP / REST + JWT ↓</div>
+
+      <div class="arch-row">
+        <div class="arch-node server">
+          <div class="arch-node-label">SERVER</div>
+          <div class="arch-node-title">Django</div>
+          <div class="arch-node-desc">REST API · Forms · Template rendering · Auth</div>
+        </div>
+      </div>
+
+      <div class="arch-arrow">↓</div>
+
+      <div class="arch-row arch-row-3">
+        <div class="arch-node db">
+          <div class="arch-node-label">DATA</div>
+          <div class="arch-node-title">SQLite</div>
+          <div class="arch-node-desc">Users · Children · Questionnaires · Feedback</div>
+        </div>
+        <div class="arch-node ai">
+          <div class="arch-node-label">AUTH</div>
+          <div class="arch-node-title">JWT Tokens</div>
+          <div class="arch-node-desc">Access + Refresh · Role permissions</div>
+        </div>
+        <div class="arch-node files">
+          <div class="arch-node-label">MEDIA</div>
+          <div class="arch-node-title">File Storage</div>
+          <div class="arch-node-desc">Profile images · medical attachments</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="arch-note">
+      Built as a 3-person team project. Django serves both the REST API and the HTML templates,
+      with role-based middleware ensuring parents only see their own children's data, therapists see only
+      assigned patients, and admins have platform-wide access. JWT tokens authenticate API calls; sessions
+      back up template-based pages.
+    </p>
+  </section>
+
+  <!-- ===== TECH STACK ===== -->
+  <section class="block">
+    <h2 class="title-label">TECH STACK</h2>
+
+    <div class="stack-grid">
+      <div class="stack-card">
+        <h3>BACKEND</h3>
+        <ul>
+          <li><span>Python</span> <code>3.x</code></li>
+          <li><span>Django</span> <code>4.x</code></li>
+          <li><span>Django REST Framework</span></li>
+          <li><span>simplejwt (JWT auth)</span></li>
+          <li><span>Django ORM</span></li>
+          <li><span>Django Forms</span></li>
+        </ul>
+      </div>
+
+      <div class="stack-card">
+        <h3>FRONTEND</h3>
+        <ul>
+          <li><span>HTML5 / CSS3</span></li>
+          <li><span>Bootstrap</span> <code>5.x</code></li>
+          <li><span>JavaScript (vanilla)</span></li>
+          <li><span>Django templates</span></li>
+          <li><span>Responsive design</span></li>
+        </ul>
+      </div>
+
+      <div class="stack-card">
+        <h3>DATA & SECURITY</h3>
+        <ul>
+          <li><span>SQLite</span> (development)</li>
+          <li>JWT token rotation</li>
+          <li>CSRF protection</li>
+          <li>Password hashing (PBKDF2)</li>
+          <li>Role-based middleware</li>
+        </ul>
+      </div>
+
+      <div class="stack-card">
+        <h3>TOOLS & WORKFLOW</h3>
+        <ul>
+          <li><span>Git & GitHub</span></li>
+          <li>Team collaboration (3 devs)</li>
+          <li>Code reviews via PRs</li>
+          <li>Manual QA testing</li>
+          <li>Issue tracking</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROLES ===== -->
+  <section class="block">
+    <h2 class="title-label">ROLES & PERMISSIONS</h2>
+
+    <table class="roles-table">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Capabilities</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>parent</code></td>
+          <td>Register children, fill developmental questionnaires, request appointments, view therapist feedback, rate therapists</td>
+        </tr>
+        <tr>
+          <td><code>therapist</code></td>
+          <td>View assigned children, review questionnaires, assign scores, provide written feedback, manage appointment availability</td>
+        </tr>
+        <tr>
+          <td><code>admin</code></td>
+          <td>Full platform access, manage users, assign therapist–child relationships, view platform statistics</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===== TEAM CONTRIBUTION ===== -->
+  <section class="block">
+    <h2 class="title-label">TEAM</h2>
+
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="feature-icon">👨‍💻</div>
+        <h3>Naum Vlavcheski</h3>
+        <p>Co-developer · Backend &amp; database design</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">👨‍💻</div>
+        <h3>Damjan Serafimovski</h3>
+        <p>Co-developer · Frontend &amp; integration</p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-icon">👨‍💻</div>
+        <h3>Daniel Pazarkoski</h3>
+        <p>Co-developer · Auth, role permissions, dashboards</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHALLENGES ===== -->
+  <section class="block">
+    <h2 class="title-label">CHALLENGES SOLVED</h2>
+
+    <div class="challenge-list">
+      <div class="challenge">
+        <h3>Complex role-based permissions</h3>
+        <p>Three distinct user roles with overlapping but distinct data access. Solved using Django decorators per view + middleware that filters QuerySets at the ORM level — parents physically cannot query other children's records, even via direct URL manipulation.</p>
+      </div>
+
+      <div class="challenge">
+        <h3>Questionnaire flexibility</h3>
+        <p>Different questionnaires apply to different age groups (0–6 months, 7–12 months, 1–2 years, etc.). Built a configurable questionnaire model with weighted scoring so admins can add new questionnaires without code changes.</p>
+      </div>
+
+      <div class="challenge">
+        <h3>Bidirectional review trust</h3>
+        <p>Parents review therapists, but reviews shouldn't appear publicly until a consultation actually happened. Added a state machine on appointments (requested → confirmed → completed → reviewable) before any rating is allowed.</p>
+      </div>
+
+      <div class="challenge">
+        <h3>Team workflow</h3>
+        <p>Three developers working in parallel on overlapping features. Established Git branching strategy (feature branches → PR → review by another team member → merge to main) and split clear ownership areas to avoid merge conflicts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="block end-cta">
+    <h2>Healthcare platform for early detection.</h2>
+    <div class="cta-links">
+      <a href="https://github.com/Pazarkoskid/ChildSystem" target="_blank" rel="noopener" class="cta-btn primary">VIEW CODE →</a>
+      <a href="https://github.com/NaumVlavceski/ChildSystem" target="_blank" rel="noopener" class="cta-btn">ORIGINAL REPO ↗</a>
+      <a href="mailto:pazarkoskidaniel123@gmail.com" class="cta-btn">EMAIL ME</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Pazarkoski. All rights reserved.
+  </footer>
+</main>
+
+</body>
+</html>
