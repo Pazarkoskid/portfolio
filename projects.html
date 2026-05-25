@@ -5,7 +5,8 @@
     <title>Pazarkoski.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="keywords" content="Daniel Pazarkoski, Portfolio,">
-    <link rel="icon" type="image/png" href="photos/dp_logo.png">
+    <link rel="icon" type="image/svg+xml" href="photos/c4_logo.svg">
+    <link rel="alternate icon" type="image/png" href="photos/c4_favicon_64.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 
     <style>
@@ -65,6 +66,14 @@
         .logo {
             font-weight: 800;
             letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo img {
+            width: 32px;
+            height: 32px;
+            display: block;
         }
 
         nav a {
@@ -174,6 +183,13 @@
             .page-intro {
                 margin-top: 40%;
             }
+            .logo img {
+                width: 24px;
+                height: 24px;
+            }
+            .logo {
+                font-size: 13px;
+            }
         }
 
         footer {
@@ -189,7 +205,10 @@
 <body>
 
 <header>
-    <a href="index.html" class="logo">PAZARKOSKI.</a>
+    <a href="index.html" class="logo">
+        <img src="photos/c4_logo.svg" alt="Pazarkoski logo"/>
+        <span>PAZARKOSKI.</span>
+    </a>
     <nav>
         <a href="index.html">HOME</a>
         <a href="https://github.com/Pazarkoskid">GITHUB</a>
@@ -205,6 +224,45 @@
             created alongside my development work.
         </p>
     </div>
+
+    <section>
+        <h3 class="title-label">Pazarkoski Personal Brand</h3>
+        <section class="logo-grid">
+            <a href="#logoPaz1" class="logo-card">
+                <img src="photos/c4_logo_dark_512.png" alt="Pazarkoski logo on dark blueprint background">
+                <h3>Dark Blueprint</h3>
+            </a>
+
+            <a href="#logoPaz2" class="logo-card">
+                <img src="photos/c4_logo_white_512.png" alt="Pazarkoski logo on white background">
+                <h3>White Edition</h3>
+            </a>
+
+            <a href="#logoPaz3" class="logo-card">
+                <img src="photos/c4_app_icon_512.png" alt="Pazarkoski app icon">
+                <h3>App Icon</h3>
+            </a>
+        </section>
+
+        <!-- LIGHTBOXES -->
+        <div id="logoPaz1" class="lightbox">
+            <a href="#">
+                <img src="photos/c4_logo_dark_512.png" alt="Pazarkoski logo dark">
+            </a>
+        </div>
+
+        <div id="logoPaz2" class="lightbox">
+            <a href="#">
+                <img src="photos/c4_logo_white_512.png" alt="Pazarkoski logo white">
+            </a>
+        </div>
+
+        <div id="logoPaz3" class="lightbox">
+            <a href="#">
+                <img src="photos/c4_app_icon_512.png" alt="Pazarkoski app icon">
+            </a>
+        </div>
+    </section>
 
     <section>
         <h3 class="title-label">FinkiHUB Flat Logo</h3>

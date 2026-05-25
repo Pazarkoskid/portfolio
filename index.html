@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pazarkoski.</title>
   <meta name="keywords" content="Daniel Pazarkoski, Portfolio,">
-  <link rel="icon" type="image/png" href="photos/dp_logo.png">
+  <link rel="icon" type="image/svg+xml" href="photos/c4_logo.svg">
+  <link rel="alternate icon" type="image/png" href="photos/c4_favicon_64.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 
   <style>
@@ -67,6 +68,14 @@
     .logo {
       font-weight: 800;
       letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo img {
+      width: 32px;
+      height: 32px;
+      display: block;
     }
     nav{
       margin-left: 5px;
@@ -586,6 +595,7 @@
     @media (max-width: 480px) {
       header { padding: 10px 12px; }
       .logo { font-size: 12px; }
+      .logo img { width: 22px; height: 22px; }
       nav { gap: 10px; }
       nav a { font-size: 9px; letter-spacing: 0.3px; }
       /* Hide email link on very small to save space */
@@ -630,8 +640,8 @@
 
 <header>
   <a href="index.html" class="logo">
-
-    <div class="logo">PAZARKOSKI.</div>
+    <img src="photos/c4_logo.svg" alt="Pazarkoski logo"/>
+    <span>PAZARKOSKI.</span>
   </a>
 </header>
 
